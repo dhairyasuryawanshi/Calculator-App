@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oneshot/home/calculator_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -7,18 +8,15 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "TestApp",
-      home: const Material(
-        color: Colors.greenAccent,
-        child: Center(child:
-        Text("hi",
-          style: TextStyle(
-              fontSize: 100,
-              fontStyle: FontStyle.normal
-          ),)
+      home: Scaffold(
+        backgroundColor: Colors.cyan,
+        body: Directionality(
+          textDirection: TextDirection.ltr, // Change this to TextDirection.rtl for right-to-left layout
+          child: SafeArea(
+            child: CalculatorView(),
+          ),
         ),
       ),
-
     );
   }
 }
